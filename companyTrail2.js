@@ -24,7 +24,7 @@ const app= express();
         "AgeofCompany"
     ]
     const chromeOptions = {
-        headless: false,
+        headless: true,
         defaultViewport: null,
         args: [
             "--incognito",
