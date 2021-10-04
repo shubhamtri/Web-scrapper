@@ -1,6 +1,9 @@
 const puppeteer = require('puppeteer');
 const $=require('cheerio');
+const prompt = require('prompt-sync')();
+
 (async ()=>{
+    const name = prompt('Enter The Song name or author name --> ');
     const browser= await puppeteer.launch({ headless: false });
     const page= await browser.newPage();
     await page.setViewport({
@@ -8,7 +11,7 @@ const $=require('cheerio');
         height: 720,
         deviceScaleFactor: 1,
     });
-    await page.goto('https://www.google.com/search?q=Jeremy Zucker – Comethru feat. Bea Miller (Lyrics)+lyrics');
+    await page.goto(`https://www.google.com/search?q=${name}`);
     let search=await page.$('.SALvLe.farUxc.mJ2Mod');
     console.log(1);
     if(search===null){
