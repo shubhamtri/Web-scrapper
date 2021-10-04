@@ -19,11 +19,11 @@ const prompt = require('prompt-sync')();
         const search2=await page.click('#wp-tabs-container g-text-expander');
         const res=await page.$('#wp-tabs-container')
         const title=await res.$$eval('.ujudUb span',options => options.map(option => option.textContent))
-        console.log(title.join('\n'));
+        console.log("link",title.join('\n'));
         // console.log(search2);
         return;
     }
 
     const title=await search.$$eval('.ujudUb span',options => options.map(option => option.textContent))
-    console.log(title.join('\n'));
+    console.log("link",title.join('\n'));
 })()
